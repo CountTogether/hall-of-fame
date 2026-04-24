@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JsonSchemaMappingsProjectConfiguration">
+    <state>
+      <map>
+        <entry key="Hall of Fame Entries">
+          <value>
+            <SchemaInfo>
+              <option name="name" value="Hall of Fame Entries" />
+              <option name="relativePathToSchema" value="entries.schema.json" />
+              <option name="patterns">
+                <list>
+                  <Item>
+                    <option name="path" value="entries.json" />
+                  </Item>
+                </list>
+              </option>
+            </SchemaInfo>
+          </value>
+        </entry>
+      </map>
+    </state>
+  </component>
+</project>
+

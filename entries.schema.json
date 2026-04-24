@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hall of Fame Entries",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "found"],
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 1,
+        "description": "The researcher's name or handle"
+      },
+      "found": {
+        "type": "string",
+        "format": "date",
+        "description": "Date the vulnerability was reported (YYYY-MM-DD)"
+      },
+      "links": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["name", "url"],
+          "additionalProperties": false,
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Display name of the link"
+            },
+            "url": {
+              "type": "string",
+              "format": "uri",
+              "description": "Link target URL"
+            }
+          }
+        },
+        "description": "Optional links to CVEs, write-ups, or other resources"
+      }
+    }
+  }
+}
+

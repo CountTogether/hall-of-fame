@@ -1,0 +1,32 @@
+name: Validate entries.json
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    name: Validate entries.json
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 25
+
+      - name: Install ajv-cli
+        run: npm install -g ajv-cli ajv-formats
+
+      - name: Validate entries.json against schema
+        run: |
+          ajv validate \
+            --spec=draft7 \
+            -c ajv-formats \
+            -s entries.schema.json \
+            -d entries.json \
+            && echo "✅ entries.json is valid"
+
